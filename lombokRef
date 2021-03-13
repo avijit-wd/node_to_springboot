@@ -1,0 +1,160 @@
+Essentials for Backend Application
+
+1. Middleware(Nodejs)   >>>>>>>>>  [Boot] @Configuration on Class ,  @Bean on Method
+
+2. BodyParser(Nodejs)   >>>>>>>>>  [Boot] embedded JACKSON library  (example- @JsonProperty, @JsonIgnore) 
+
+3. Express-validator/joi(Nodejs) >>>>   [Boot] spring-boot-starter-validation   { mvn dependency}
+
+4. Error-Handling(Nodejs) >>>>>>>  [Boot] Exception Handling
+
+
+
+
+
+								<<<LOMBOK>>>
+
+1.   	>>>val
+	Finally! Hassle-free final local variables.
+
+
+
+2.	>>>var
+	Mutably! Hassle-free local variables.
+
+
+
+3.	>>>@NonNull
+	or: How I learned to stop worrying and love the NullPointerException.
+
+
+
+4.	>>>@Cleanup
+	Automatic resource management: Call your close() methods safely with no hassle.
+
+
+
+5.	>>>@Getter/@Setter
+	Never write public int getFoo() {return foo;} again.
+
+
+
+6.	>>>@ToString
+	No need to start a debugger to see your fields: Just let lombok generate a toString for you!
+
+
+
+7.	>>>@EqualsAndHashCode
+	Equality made easy: Generates hashCode and equals implementations from the fields of your object..
+
+
+
+8.	>>>@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor
+	Constructors made to order: Generates constructors that take no arguments, one argument per final / non-nullfield, or one argument for 		every field.
+
+9.	>>>@Data
+	All together now: A shortcut for @ToString, @EqualsAndHashCode, @Getter on all fields, and @Setter on all non-final fields, and 		
+	
+10.	>>>@RequiredArgsConstructor!
+
+
+11.	>>>@Value
+	Immutable classes made very easy.
+
+12. 	>>>@Builder
+	 No-hassle fancy-pants APIs for object creation!
+
+
+13.	>>>@SneakyThrows
+	To boldly throw checked exceptions where no one has thrown them before!
+
+14.	>>>@Synchronized
+	synchronized done right: Don't expose your locks.
+
+14.	>>>@With
+	Immutable 'setters' - methods that create a clone but with one changed field.
+
+15.	>>>@Getter(lazy=true)
+	Laziness is a virtue!
+
+16.	>>>@Log
+	Captain's Log, stardate 24435.7: "What was that line again?"
+==================================================================================================================================================
+
+
+
+@Component is nothing but superset of [@Repository, @Service, @Controller].
+
+To be more specific on Classes, we should use @Repository, @Service & @Controller annotations.
+
+
+
+==================================================================================================================================================
+							<<<JACKSON>>>
+						         JSON PARSER
+
+Jackson has been known as "the Java JSON library" or "the best JSON parser for Java". Or simply as "JSON for Java".
+
+More than that, Jackson is a suite of data-processing tools for Java (and the JVM platform), including the flagship streaming JSON parser / generator library, matching data-binding library (POJOs to and from JSON) 
+
+
+1.  If we dont want to send Class Attributes to client then we will simply add @JsonIgnore on top of the getter method of Entity class.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public class User{
+
+	private long id;
+	private String name;
+	@JsonProperty(access = JsonProperty.access.WRITE_ONLY)
+	private String password;
+	
+	public long getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	@JsonIgnore
+	public String getPassword() {
+		return password;
+	}
+	
+}
+	
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+	JSON RESPONSE WILL BE
+[
+  {
+    "id": 1,
+    "name": "TODO"
+  }
+]
+
+==================================================================================================================================================
+							<<<Validation in SpringBoot>>>
+
+import javax.validation.constraints
+
+
+1 STEP.  @NotBlank(message="Attribute must be not empty"),@NotNull, @Email(/REGEX/) , @Max(VALUE), @Min(VALUE), Size etc   >>>> in attributes
+
+
+2 STEP.  @Valid              >>>> in Controller method
+
+
+3 STEP   Handling the Exceptions which are passed through @NotBlank(.........) or other annotations
+
+
+==================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
