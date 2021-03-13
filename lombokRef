@@ -81,13 +81,19 @@ Essentials for Backend Application
 	Captain's Log, stardate 24435.7: "What was that line again?"
 ==================================================================================================================================================
 
-
-
 @Component is nothing but superset of [@Repository, @Service, @Controller].
 
 To be more specific on Classes, we should use @Repository, @Service & @Controller annotations.
 
+==================================================================================================================================================
 
+@Value is used to catch specific property from application.properties and invoke in an attribute in class.
+
+>>>>>>>>>>>>>>>>>>>>
+info.company.name=Mnt;  >> [inside application.properties]
+
+@Value("${info.company.name}");
+private String companyName;
 
 ==================================================================================================================================================
 							<<<JACKSON>>>
@@ -148,13 +154,39 @@ import javax.validation.constraints
 
 
 ==================================================================================================================================================
+								<<<Logging>>>
+
+>>>>>LOGBACK is used internally on SpringBoot for logger.
+Logging is Simple and important for debugging!!!!!  It is used on production application to encounter issues quickly when a server breaks down.
 
 
+Logging is the process of writing log messages during the execution of a program to a central place. This logging allows you to report and persist error and warning messages as well as info messages (e.g., runtime statistics) so that the messages can later be retrieved and analyzed.
+
+The object which performs the logging in applications is typically just called Logger.
 
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	
+    >>>>>Good way to write Logger
+    ++++++++++++++++++++++++++++	
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    
+    private final static Logger LOGGER = LoggerFactory.getLogger(CustomerController.class); 
+    +++++++++++++++++++++++++++++
+    
+    =Similar
+    
+    >>>>>In Project
+    +++++++++++++++++++++++++++++
+    import ch.qos.logback.classic.Logger;
+    
+    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(AlarmRepositoryCustom.class);
+    +++++++++++++++++++++++++++++
+
+	To Log in console we use LOGGER.info(""), LOGGER.error("") etc.
 
 
-
-
+==================================================================================================================================================
 
 
