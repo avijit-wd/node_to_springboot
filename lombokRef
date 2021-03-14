@@ -185,8 +185,16 @@ The object which performs the logging in applications is typically just called L
     +++++++++++++++++++++++++++++
 
 	To Log in console we use LOGGER.info(""), LOGGER.error("") etc.
-
-
+    
+    =similar
+    
+    >>>>>
+    <<<<<SIMPLEST WAY PROVIDED BY LOMBOK>>>>>>
+    ++++++++++++++++++++++++++++++
+    @Slf4j  on top of class
+    
+    and use log.info, log.error, log.warn
+    ++++++++++++++++++++++++++++++
 ==================================================================================================================================================
 
 
