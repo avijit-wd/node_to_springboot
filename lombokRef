@@ -19,7 +19,7 @@ Essentials for Backend Application
 
 
 
-2.	>>>var
+2.	>>>var   *Important*
 	Mutably! Hassle-free local variables.
 
 
@@ -49,10 +49,10 @@ Essentials for Backend Application
 
 
 
-8.	>>>@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor
+8.	>>>@NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor   *Important*
 	Constructors made to order: Generates constructors that take no arguments, one argument per final / non-nullfield, or one argument for 		every field.
 
-9.	>>>@Data
+9.	>>>@Data *Important*
 	All together now: A shortcut for @ToString, @EqualsAndHashCode, @Getter on all fields, and @Setter on all non-final fields, and 		
 	
 10.	>>>@RequiredArgsConstructor!
@@ -77,7 +77,7 @@ Essentials for Backend Application
 15.	>>>@Getter(lazy=true)
 	Laziness is a virtue!
 
-16.	>>>@Log
+16.	>>>@Log *Important*
 	Captain's Log, stardate 24435.7: "What was that line again?"
 ==================================================================================================================================================
 
